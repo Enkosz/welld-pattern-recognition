@@ -6,13 +6,13 @@ import javax.validation.constraints.NotNull;
 
 public class CreatePointDto {
 
-    @NotNull
+    @NotNull(message = "must be a valid number")
     @NumberFormat(style = NumberFormat.Style.NUMBER)
-    private double x;
+    private Double x;
 
-    @NotNull
+    @NotNull(message = "must be a valid number")
     @NumberFormat(style = NumberFormat.Style.NUMBER)
-    private double y;
+    private Double y;
 
     public double getX() {
         return x;

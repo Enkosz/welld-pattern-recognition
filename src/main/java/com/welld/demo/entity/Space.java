@@ -28,9 +28,12 @@ public class Space {
     }
 
     public void addPointsToLine(Line line, List<Point> points) {
+        // If the line is already computed then the point is added to it
+        // In this case points contains a single point instance
         if (this.lines.containsKey(line))
             this.lines.get(line).addAll(points);
         else
+            // Otherwise, we save the new calculated line between 2 points
             this.lines.put(line, new HashSet<>(points));
     }
 

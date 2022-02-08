@@ -20,12 +20,14 @@ public class SpaceServiceImpl implements SpaceService {
     public Point addPoint(double x, double y) {
         Point newPoint = new Point(x, y);
 
+        // Space contains only unique points
         if (space.containsPoint(newPoint))
             return newPoint;
 
         space.getPoints().forEach(point -> {
             Line line = new Line(point, newPoint);
 
+            // If the line is new then it is added to the collection
             space.addPointsToLine(line, List.of(point, newPoint));
         });
 

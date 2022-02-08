@@ -10,7 +10,7 @@ public class Line {
         slope = 0;
         intercept = 0;
 
-        // If y1 = y2 then we simply say m = 0 since we have an horizontal line
+        // If y1 = y2 then we simply say m = 0 since we have a horizontal line
         if (start.getY() == end.getY()) {
             intercept = start.getY();
         } else if (start.getX() == end.getX()) {
@@ -20,14 +20,6 @@ public class Line {
             slope = (start.getY() - end.getY()) / (start.getX() - end.getX());
             intercept = start.getY() - slope * start.getX();
         }
-    }
-
-    public double getSlope() {
-        return slope;
-    }
-
-    public double getIntercept() {
-        return intercept;
     }
 
     @Override
