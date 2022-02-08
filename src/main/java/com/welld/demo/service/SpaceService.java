@@ -9,5 +9,9 @@ public interface SpaceService {
 
     void addPoint(double x, double y);
 
+    void clearSpace();
+
     List<Set<Point>> getLinesWithPoints(int n);
+
+    Set<Point> getPoints();
 }

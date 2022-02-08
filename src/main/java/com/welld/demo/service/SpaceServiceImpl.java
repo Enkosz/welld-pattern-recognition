@@ -23,11 +23,7 @@ public class SpaceServiceImpl implements SpaceService {
         if (space.containsPoint(newPoint))
             return;
 
-        System.out.println("Adding point: " + newPoint);
-
-        Set<Point> points = space.getPoints();
-
-        points.forEach(point -> {
+        space.getPoints().forEach(point -> {
             Line line = new Line(point, newPoint);
 
             space.addPointsToLine(line, List.of(point, newPoint));
@@ -37,11 +33,21 @@ public class SpaceServiceImpl implements SpaceService {
     }
 
     @Override
+    public void clearSpace() {
+        this.space.clearSpace();
+    }
+
+    @Override
     public List<Set<Point>> getLinesWithPoints(int n) {
         return this.space.getLines()
                 .values()
                 .stream()
                 .filter(points -> points.size() >= n)
                 .collect(Collectors.toUnmodifiableList());
+    }
+
+    @Override
+    public Set<Point> getPoints() {
+        return this.space.getPoints();
     }
 }

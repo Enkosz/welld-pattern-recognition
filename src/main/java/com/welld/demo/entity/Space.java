@@ -34,4 +34,9 @@ public class Space {
             this.lines.put(line, new HashSet<>(points));
         }
     }
+
+    public void clearSpace() {
+        this.lines.clear();
+        this.points.clear();
+    }
 }
