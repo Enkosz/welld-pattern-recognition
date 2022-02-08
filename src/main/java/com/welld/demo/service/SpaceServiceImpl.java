@@ -17,11 +17,11 @@ public class SpaceServiceImpl implements SpaceService {
     }
 
     @Override
-    public void addPoint(double x, double y) {
+    public Point addPoint(double x, double y) {
         Point newPoint = new Point(x, y);
 
         if (space.containsPoint(newPoint))
-            return;
+            return newPoint;
 
         space.getPoints().forEach(point -> {
             Line line = new Line(point, newPoint);
@@ -30,6 +30,8 @@ public class SpaceServiceImpl implements SpaceService {
         });
 
         space.addPoint(newPoint);
+
+        return newPoint;
     }
 
     @Override

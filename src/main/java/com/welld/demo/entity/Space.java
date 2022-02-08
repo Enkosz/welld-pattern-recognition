@@ -28,11 +28,10 @@ public class Space {
     }
 
     public void addPointsToLine(Line line, List<Point> points) {
-        if (this.lines.containsKey(line)) {
+        if (this.lines.containsKey(line))
             this.lines.get(line).addAll(points);
-        } else {
+        else
             this.lines.put(line, new HashSet<>(points));
-        }
     }
 
     public void clearSpace() {

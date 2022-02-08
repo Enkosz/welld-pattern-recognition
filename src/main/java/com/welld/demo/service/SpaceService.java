@@ -7,7 +7,7 @@ import java.util.Set;
 
 public interface SpaceService {
 
-    void addPoint(double x, double y);
+    Point addPoint(double x, double y);
 
     void clearSpace();
 
